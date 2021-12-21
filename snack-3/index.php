@@ -36,28 +36,39 @@ $posts = [
     ],
   ],
 ];
-var_dump($posts);
+//var_dump($posts);
 
-$data = array_keys($posts);
-var_dump($data);
+//$data = array_keys($posts);
+//var_dump($data);
 
 
+/*
 foreach($posts as $post){
   var_dump($post);
 }
 
 $autore = [];
 $testo = [];
+*/
 
-foreach($post as $key => $value){
+foreach($posts as $key => $value){
   var_dump($key);
+  //var_dump($value);
 
-  $autore[] = $value['author'];
-  $testo[] = $value['text'];
+  //$autore[] = $value['author'];
+  //$testo[] = $value['text'];
+
+  foreach($value as $post) {
+
+    //var_dump($post);
+
+    echo $post['author'];
+    echo $post['text'];
+  }
 
 }
-var_dump($autore);
-var_dump($testo);
+//var_dump($autore);
+//var_dump($testo);
 
 ?>
 
@@ -74,22 +85,17 @@ var_dump($testo);
   <div>
     <ul>
       <?php
-      $arrayLength = count($posts);
-      var_dump($arrayLength);
-
-
-      for ($i=0; $i < $arrayLength; $i++) { 
-
-        echo "<h2> Data post: {$data[$i]} </h2> 
-        <h3> 
-          Autore: {$autore[$i]} 
-        </h3>         
-        <li>
-          <p> 
-            Descrizione : {$testo[$i]}
-          </p>
-        </li>";        
-                
+      foreach($posts as $key => $value){
+        echo "<h2>{$key}</h2>";
+      
+        foreach($value as $post) {
+      
+          //var_dump($post);
+      
+          echo "<li> <h4>{$post['author']}</h4>
+          <p>{$post['text']}</p>";
+        }
+      
       }
       ?>
     </ul>
