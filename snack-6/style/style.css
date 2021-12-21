@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.insegnanti{
+  width: 500px;
+  height: 400px;
+  background-color: gray;
+}
+
+.pm{
+  width: 500px;
+  height: 400px;
+  background-color: green;
+  right: 0px;
+}
+
